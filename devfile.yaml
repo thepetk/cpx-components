@@ -4,9 +4,17 @@ metadata:
   displayName: Chapeaux Web Components
   language: 'javascript'
 components:
+  - name: deno-image
+    image:
+      imageName: deno-che:latest
+      autoBuild: true
+      dockerfile:
+        uri: Containerfile
+        buildContext: .
+        rootRequired: false
   - name: deno-www
-    container:
-      image: quay.io/chapeaux/deno-che:latest
+    container: 
+      image: deno-che:latest
       env:
         - name: DENO_DIR
           value: .deno
